@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#1565c0"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>Dukan Khata</title>
+<style>
+:root{--g:#1e8e3e;--b:#1976d2;--r:#d93636;--p:#6a3fc4;--o:#ef7c12;--t:#1c2733;--m:#66727f}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:#dfe6ec}:root{padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#dfe6ec;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t);font-size:16px}
+#app{max-width:480px;margin:0 auto;background:#fff;min-height:100vh}
+.hd{color:#fff;padding:22px 16px 46px;display:flex;align-items:center;gap:12px;font-size:21px;position:relative;overflow:hidden}
+.hd b{flex:1}.hd .ic{font-size:24px;position:relative}
+.bk{background:none;border:0;color:#fff;font-size:28px;padding:0 6px;position:relative}
+.mt{position:absolute;inset:0}.mt svg{width:100%;height:100%;display:block}
+.hrow{position:relative;display:flex;align-items:center;gap:12px;width:100%}
+.logo{font-size:40px}.sub{font-size:13px;opacity:.92}
+.gear{background:none;border:0;color:#fff;font-size:28px;margin-left:auto}
+.sw{background:#fff;border-radius:24px 24px 0 0;margin-top:-26px;padding:18px 14px 110px;position:relative}
+.sm{font-size:13px;color:var(--m)}label{display:block;font-weight:700;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:14px;font-size:16px;border:1.5px solid #cfd8e0;border-radius:12px;background:#fff;font-family:inherit}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.sc{border-radius:14px;padding:12px;min-height:92px}.sc small{display:block;font-size:12.5px;font-weight:600;margin:6px 0 2px}.sc b{font-size:22px}
+.gc{background:#e6f6ea;color:#14672d}.bc{background:#e6f0fd;color:#0f55a8}.rc{background:#fdeaea;color:#a82020}.oc{background:#fff0e0;color:#b3590a}.pc{background:#efe8fb;color:#5129a0}
+.bar{display:flex;align-items:center;gap:12px;border-radius:14px;padding:14px;margin:10px 0;font-size:15px}.bar b{display:block;font-size:21px}.bar span:last-child{margin-left:auto;font-size:24px}
+.gb{background:#1e8e3e;color:#fff}
+.bt{border:0;border-radius:14px;color:#fff;font-weight:800;font-size:17px;min-height:68px;width:100%;box-shadow:0 4px 0 rgba(0,0,0,.18);padding:10px}
+.bt.s{min-height:50px;font-size:16px}
+.sv{border:0;border-radius:14px;color:#fff;font-weight:800;font-size:18px;min-height:60px;width:100%;margin-top:22px;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.add{width:100%;border:1.5px dashed #9bb;background:#f2f7f4;color:#14672d;border-radius:12px;padding:13px;font-weight:700;font-size:15px;margin-top:10px}
+.lk{background:none;border:0;color:var(--p);font-weight:700;padding:8px 0;font-size:14px}
+.stp{display:flex;gap:6px}.stp button{width:46px;border:1.5px solid #cfd8e0;background:#fff;border-radius:12px;font-size:22px}.stp input{text-align:center;padding:12px 4px}
+.ln{margin-bottom:6px;padding-bottom:6px}.ln .g2{margin-top:2px}
+.pc2,.gen{display:flex;align-items:center;gap:12px;border-radius:14px;padding:12px;margin-top:8px}
+.gen{background:#e6f6ea;color:#14672d;font-size:14px;font-weight:600}.pc2{background:#f3eefb;border:1px solid #e0d4f5}
+.av{width:42px;height:42px;border-radius:50%;color:#fff;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none;font-size:18px}
+.cr{padding:12px;border-bottom:1px solid #e8edf1;cursor:pointer}.cr.nw{color:var(--b);font-weight:700}
+#cr{border:1px solid #e8edf1;border-radius:12px;margin-top:6px;display:none}
+.pt{border:2px solid #dce3e9;border-radius:14px;text-align:center;padding:14px 6px;font-weight:700;background:#f5f7f9}.pt.on{border-color:#2e9e57;background:#e6f6ea}
+.ct{border-radius:14px;text-align:center;padding:14px 4px;font-weight:700;font-size:14px;border:2px solid transparent}.ct.on{border-color:var(--t)}
+.ct i{display:block;font-style:normal;font-size:26px}
+.tabs{display:flex;background:#e3ebf3;border-radius:12px;padding:3px;margin:4px 0 10px}.tabs button{flex:1;border:0;background:none;padding:11px;border-radius:10px;font-weight:700;color:var(--m);font-size:14px}.tabs button.on{background:var(--b);color:#fff}
+.row{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid #e8edf1}.row>div{flex:1;min-width:0}
+.bd{border-radius:20px;padding:5px 10px;font-size:12px;font-weight:700;white-space:nowrap}.bd.r{background:#fdeaea;color:#c62828}.bd.g{background:#e3f6e8;color:#14672d}
+.tot{text-align:center;font-weight:800;font-size:19px;margin-top:14px}
+.mi{display:flex;align-items:center;gap:14px;padding:15px 4px;border-bottom:1px solid #e8edf1}.mi i{font-style:normal;width:40px;height:40px;border-radius:50%;background:#e8eef5;display:flex;align-items:center;justify-content:center;font-size:20px}.mi div{flex:1}.mi b{display:block}
+.ban{border-radius:18px;margin-top:18px;height:140px;position:relative;overflow:hidden;background:#cfe8ff}.ban .t{position:absolute;top:18px;width:100%;text-align:center;font-style:italic;font-weight:700;color:#1b4a7a;font-size:20px;z-index:2}
+.warn{background:#fff3cd;border:1px solid #e0b100;color:#5c4400;border-radius:12px;padding:12px;margin:10px 0;font-size:14px}
+.x{background:none;border:0;color:var(--r);font-weight:700;font-size:13px;padding:6px 0}
+.it{padding:11px 0;border-bottom:1px solid #e8edf1}
+nav{position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:0 auto;background:#fff;border-top:1px solid #d7dfe6;display:flex;padding-bottom:env(safe-area-inset-bottom,0);box-shadow:0 -4px 14px rgba(0,0,0,.06)}
+nav button{flex:1;border:0;background:none;padding:9px 2px 11px;font-size:12px;font-weight:700;color:var(--m)}nav button i{display:block;font-style:normal;font-size:22px}nav button.on{color:var(--b)}
+#toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#1c2733;color:#fff;padding:12px 20px;border-radius:24px;font-weight:600;display:none;z-index:9}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<nav id="nav"></nav>
+<div id="toast"></div>
+<script>
+var KEY='dukan_khata_v1',DB,view='home',pid=null,tab='Sabhi',rng='aaj',full=false,F=null,KQ='';
+var LB={cash:'Naqd Farokht',udhar:'Udhar Diya',wasool:'Raqam Wasool',kharcha:'Kharcha'};
+var CATS=[['Rashan','🛒','#fff0e0'],['Bijli','⚡','#e6f0fd'],['Pani','💧','#e6f0fd'],['Transport','🚗','#efe8fb'],['Dukan Samaan','📦','#fff0e0'],['Mazeed','⋯','#eef1f4']];
+var MT='<svg viewBox="0 0 400 130" preserveAspectRatio="none"><rect width="400" height="130" fill="#1976d2"/><polygon points="0,130 60,60 110,100 190,40 270,105 330,65 400,110 400,130" fill="#fff" opacity=".28"/><polygon points="0,130 90,85 160,110 240,75 320,110 400,90 400,130" fill="#0d47a1" opacity=".55"/></svg>';
+var HL='<svg viewBox="0 0 400 140" preserveAspectRatio="none" style="position:absolute;bottom:0;left:0;width:100%;height:100%"><polygon points="0,140 80,70 140,100 220,45 300,95 360,70 400,100 400,140" fill="#9ec5e8"/><polygon points="0,140 0,105 120,95 250,110 400,92 400,140" fill="#5fae5a"/></svg>';
+function $(i){return document.getElementById(i)}
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY));if(d&&d.entries&&d.people){d.shop=d.shop||{name:'',margin:10,lastBackup:null};return d}}catch(e){}return{shop:{name:'',margin:10,lastBackup:null},people:[],entries:[]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(DB))}catch(e){alert('Data mehfooz nahi hua! Phone ki memory check karein.')}}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function today(){var d=new Date();return new Date(d-d.getTimezoneOffset()*60000).toISOString().slice(0,10)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function rs(n){return 'Rs. '+Math.round(n).toLocaleString('en-US')}
+function sum(l,t){return l.filter(function(e){return e.type==t}).reduce(function(a,e){return a+e.amt},0)}
+function mine(id){return DB.entries.filter(function(e){return e.pid==id})}
+function bal(id){var l=mine(id);return sum(l,'udhar')-sum(l,'wasool')}
+function totalUdhar(){return DB.people.reduce(function(a,p){return a+Math.max(bal(p.id),0)},0)}
+function person(id){return DB.people.filter(function(p){return p.id==id})[0]}
+function stats(f){var l=DB.entries.filter(f),c=sum(l,'cash'),u=sum(l,'udhar'),w=sum(l,'wasool'),k=sum(l,'kharcha');return{c:c,u:u,s:c+u,w:w,k:k,ci:c+w,b:c+w-k,est:(c+u)*(Number(DB.shop.margin)||0)/100,l:l}}
+function fToday(e){return e.date==today()}
+function fMonth(e){return e.date.slice(0,7)==today().slice(0,7)}
+function fAll(){return true}
+function byDate(a,b){return a.date<b.date?1:a.date>b.date?-1:(a.id<b.id?1:-1)}
+function lastPay(id){return mine(id).filter(function(e){return e.type=='wasool'}).sort(byDate)[0]||null}
+function toast(m){var t=$('toast');t.textContent=m;t.style.display='block';setTimeout(function(){t.style.display='none'},1800)}
+function av(p){var h=0,n=p.name||'?';for(var i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))%360;return '<span class="av" style="background:hsl('+h+',55%,45%)">'+esc(n.charAt(0).toUpperCase())+'</span>'}
+function hdr(t,c,ic,bk){return '<div class="hd" style="background:'+c+'">'+(bk?'<button class="bk" onclick="back()">&larr;</button>':'')+'<b>'+t+'</b><span class="ic">'+(ic||'')+'</span></div>'}
+function sc(c,ic,l,v){return '<div class="sc '+c+'"><span style="font-size:22px">'+ic+'</span><small>'+l+'</small><b>'+v+'</b></div>'}
+function go(v,id){view=v;if(id!==undefined)pid=id;render();window.scrollTo(0,0)}
+function back(){var m={form:F&&F.from||'home',person:'khata',add:'khata',settings:'more',backup:'more',about:'more',help:'more'};if(view=='add'&&F&&F.pend){F.pend=false;go('form');return}go(m[view]||'home')}
+function erow(e,del){var d=[e.date];var p=e.pid?person(e.pid):null;if(p)d.push(esc(p.name));if(e.item)d.push(esc(e.item));if(e.pay&&e.type=='wasool')d.push(esc(e.pay));if(e.note)d.push(esc(e.note));if(e.due)d.push('Wapsi: '+esc(e.due));
+var c={cash:'#14672d',udhar:'#0f55a8',wasool:'#5129a0',kharcha:'#b3590a'}[e.type];
+return '<div class="it"><div style="display:flex;justify-content:space-between"><b style="color:'+c+'">'+LB[e.type]+'</b><b>'+rs(e.amt)+'</b></div><div class="sm">'+d.join(' - ')+'</div>'+(del?'<button class="x" onclick="delE(\''+e.id+'\')">Mita dein</button>':'')+'</div>'}
+function prow(p){var b=bal(p.id);return '<div class="row" onclick="go(\'person\',\''+p.id+'\')">'+av(p)+'<div><b>'+esc(p.name)+'</b>'+(p.tag?' <span class="sm">- '+esc(p.tag)+'</span>':'')+'<div class="sm">'+esc(p.phone||'')+'</div></div><span class="bd '+(b>0?'r':'g')+'">'+(b>0?'Baqi: ':'Saaf: ')+rs(Math.max(b,0))+'</span></div>'}
+function vHome(){var s=stats(fToday),lb=DB.shop.lastBackup,old=!lb||(Date.now()-new Date(lb))>7*864e5;
+return '<div class="hd" style="background:#1565c0;padding-bottom:50px"><div class="mt">'+MT+'</div><div class="hrow"><span class="logo">🏪</span><div><b style="font-size:24px;flex:none">'+esc(DB.shop.name||'Dukan Khata')+'</b><div class="sub">Aapki Dukan, Aapka Hisab</div></div><button class="gear" onclick="go(\'settings\')">&#9881;</button></div></div>'+
+'<div class="sw"><b style="font-size:19px">Assalam o Alaikum!</b><div class="sm" style="margin-bottom:12px">Aaj ka hisab ek nazar mein</div>'+
+(old&&DB.entries.length?'<div class="warn">7 din se backup nahi liya. Mazeed &gt; Backup Data mein jakar backup lein.</div>':'')+
+'<div class="g2">'+sc('gc','💵','Aaj ki Naqd Farokht',rs(s.c))+sc('bc','👤','Aaj ke Udhar',rs(s.u))+sc('rc','💰','Kul Baqi Udhar',rs(totalUdhar()))+sc('oc','🧾','Kharcha (Aaj)',rs(s.k))+'</div>'+
+'<div class="bar gb" onclick="go(\'report\')"><span style="font-size:26px">📈</span><span>Andaza Munafa (Aaj)<b>'+rs(s.est)+'</b></span><span>&rsaquo;</span></div>'+
+'<div class="g2"><button class="bt" style="background:#1e8e3e" onclick="openForm(\'sale\')">💵<br>Naqd Farokht</button><button class="bt" style="background:#1976d2" onclick="openForm(\'udhar\')">👤<br>Udhar Diya</button><button class="bt" style="background:#6a3fc4" onclick="openForm(\'wasool\')">💰<br>Raqam Wasool</button><button class="bt" style="background:#ef7c12" onclick="openForm(\'kharcha\')">👛<br>Kharcha</button></div></div>'}
+function klist(){var q=KQ.toLowerCase().trim(),l=DB.people.filter(function(p){var b=bal(p.id);if(tab=='Baqi'&&!(b>0))return false;if(tab=='Wasool'&&b>0)return false;return !q||((p.name||'')+' '+(p.tag||'')+' '+(p.phone||'')).toLowerCase().indexOf(q)>-1}).sort(function(a,b){return bal(b.id)-bal(a.id)});
+return l.length?l.map(prow).join(''):'<div class="sm" style="padding:18px 4px">Koi customer nahi mila.</div>'}
+function ksearch(v){KQ=v;$('kl').innerHTML=klist()}
+function vKhata(){return hdr('Udhar Khate','#1565c0','🔍',true)+'<div class="sw"><div class="tabs">'+['Sabhi','Baqi','Wasool'].map(function(t){return '<button class="'+(tab==t?'on':'')+'" onclick="tab=\''+t+'\';render()">'+t+'</button>'}).join('')+'</div><input placeholder="Customer ka naam ya phone number" value="'+esc(KQ)+'" oninput="ksearch(this.value)"><div class="sm" style="margin:10px 4px">Kul udhar baqi: <b style="color:#c62828">'+rs(totalUdhar())+'</b></div><div id="kl">'+klist()+'</div><button class="bt s" style="background:#1976d2;margin-top:16px" onclick="addC()">+ Naya Customer Add Karein</button></div>'}
+function vPerson(){var p=person(pid);if(!p){view='khata';return vKhata()}var b=bal(p.id),l=mine(p.id).sort(byDate),lp=lastPay(p.id);
+return hdr(esc(p.name)+(p.tag?' <small style="font-size:14px;opacity:.9">- '+esc(p.tag)+'</small>':''),'#1565c0','',true)+'<div class="sw"><div class="sm">'+esc(p.phone||'')+'</div><div class="sc '+(b>0?'rc':'gc')+'" style="margin:10px 0"><small>Baqi udhar</small><b style="font-size:30px">'+rs(Math.max(b,0))+'</b><div class="sm" style="margin-top:6px">Kul udhar diya: '+rs(sum(l,'udhar'))+'<br>Ab tak wapas kiya: '+rs(sum(l,'wasool'))+'<br>Aakhri wasooli: '+(lp?esc(lp.date)+' ('+rs(lp.amt)+')':'abhi nahi')+'</div></div>'+
+'<div class="g2"><button class="bt" style="background:#1976d2" onclick="openForm(\'udhar\',\''+p.id+'\')">Udhar Diya</button><button class="bt" style="background:#6a3fc4" onclick="openForm(\'wasool\',\''+p.id+'\')">Raqam Wasool</button></div><button class="bt s" style="background:#455a64;margin-top:12px" onclick="share(\''+p.id+'\')">Hisab WhatsApp par bhejein</button><h3>Tafseel</h3>'+(l.length?l.map(function(e){return erow(e,true)}).join(''):'<div class="sm">Abhi koi entry nahi.</div>')+'</div>'}
+function ltot(){return F.lines.reduce(function(a,l){return a+(Number(l.r)>0?(Number(l.q)||1)*Number(l.r):0)},0)}
+function openForm(t,p){F={type:t,pid:p||null,lines:[{n:'',q:1,r:''}],amt:'',due:'',pay:'Naqd',note:'',cat:'',date:today(),from:view=='person'?'person':'home',pend:false};go('form')}
+function custBox(){var p=F.pid?person(F.pid):null;if(p)return '<div class="pc2" onclick="F.pid=null;render()">'+av(p)+'<div style="flex:1"><b>'+esc(p.name)+'</b><div class="sm">'+esc(p.phone||'')+(F.type=='wasool'?' - Baqi: '+rs(Math.max(bal(p.id),0)):'')+'</div></div><span class="sm">Badlein</span></div>';
+return '<input placeholder="Customer ka naam ya phone number" oninput="cfind(this.value)" onfocus="cfind(this.value)"><div id="cr"></div>'+(F.type=='sale'?'<div class="gen">🧑 Bina customer ke bhi farokht kar sakte hain (General Sale)</div>':'')}
+function cfind(v){var q=v.toLowerCase().trim(),l=DB.people.filter(function(p){return !q||((p.name||'')+' '+(p.tag||'')+' '+(p.phone||'')).toLowerCase().indexOf(q)>-1}).slice(0,6),el=$('cr');
+el.innerHTML=l.map(function(p){return '<div class="cr" onclick="F.pid=\''+p.id+'\';render()">'+esc(p.name)+(p.tag?' - '+esc(p.tag):'')+' <span class="sm">'+esc(p.phone||'')+'</span></div>'}).join('')+'<div class="cr nw" onclick="F.pend=true;go(\'add\')">+ Naya customer add karein</div>';el.style.display='block'}
+function linesBox(){return F.lines.map(function(l,i){return '<div class="ln"><input list="il" placeholder="Samaan ka naam ya category" value="'+esc(l.n)+'" oninput="F.lines['+i+'].n=this.value"><div class="g2"><div><label>Matra (Quantity)</label><div class="stp"><button onclick="stepQ('+i+',-1)">&minus;</button><input id="q'+i+'" type="number" inputmode="decimal" value="'+esc(l.q)+'" oninput="F.lines['+i+'].q=this.value;recalc()"><button onclick="stepQ('+i+',1)">+</button></div></div><div><label>Rate (Rs.)</label><input type="number" inputmode="decimal" value="'+esc(l.r)+'" oninput="F.lines['+i+'].r=this.value;recalc()"></div></div></div>'}).join('')}
+function stepQ(i,d){var q=Math.max(1,(Number(F.lines[i].q)||1)+d);F.lines[i].q=q;$('q'+i).value=q;recalc()}
+function recalc(){var t=ltot();if(F.type=='sale')$('tot').textContent='Total: '+rs(t);if(F.type=='udhar'&&t>0){F.amt=t;$('ua').value=t}}
+function addLine(){F.lines.push({n:'',q:1,r:''});render()}
+function fullPay(){if(!F.pid){alert('Pehle customer chunein.');return}F.amt=Math.max(bal(F.pid),0);render()}
+function vForm(){var t=F.type,P={sale:['Naqd Farokht','#1e8e3e','🛒','🛒 Farokht Karein'],udhar:['Udhar Diya','#d93636','👤','Udhar Likhein'],wasool:['Raqam Wasool','#6a3fc4','💰','Payment Save Karein'],kharcha:['Kharcha','#ef7c12','👛','Kharcha Save Karein']}[t],b='',items={};
+DB.entries.forEach(function(e){(e.lines||[]).forEach(function(l){if(l.n)items[l.n]=1})});
+if(t!='kharcha')b+='<label style="margin-top:0">Customer'+(t=='sale'?' (zaroori nahi)':'')+'</label>'+custBox();
+if(t=='sale'||t=='udhar')b+='<label>Samaan</label>'+linesBox()+'<button class="add" onclick="addLine()">+ Aur Samaan Add Karein</button>';
+if(t=='udhar')b+='<label>Udhar ki Rakam</label><input id="ua" type="number" inputmode="decimal" value="'+esc(F.amt)+'" oninput="F.amt=this.value"><label>Due Date (Optional)</label><input type="date" value="'+esc(F.due)+'" oninput="F.due=this.value">';
+if(t=='wasool')b+='<label>Rakam</label><input id="ua" type="number" inputmode="decimal" value="'+esc(F.amt)+'" oninput="F.amt=this.value"><button class="lk" onclick="fullPay()">Poora hisab bharein</button><label>Payment Type</label><div class="g2"><div class="pt'+(F.pay=='Naqd'?' on':'')+'" onclick="F.pay=\'Naqd\';render()">💵<br>Naqd</div><div class="pt'+(F.pay=='Bank Transfer'?' on':'')+'" onclick="F.pay=\'Bank Transfer\';render()">🏦<br>Bank Transfer</div></div><label>Note (Optional)</label><textarea rows="3" placeholder="Koi note likhein" oninput="F.note=this.value">'+esc(F.note)+'</textarea>';
+if(t=='kharcha')b+='<label style="margin-top:0">Kharcha ki Category</label><div class="g3">'+CATS.map(function(c){return '<div class="ct'+(F.cat==c[0]?' on':'')+'" style="background:'+c[2]+'" onclick="F.cat=\''+c[0]+'\';render()"><i>'+c[1]+'</i>'+c[0]+'</div>'}).join('')+'</div><label>Rakam</label><input type="number" inputmode="decimal" value="'+esc(F.amt)+'" oninput="F.amt=this.value"><label>Note (Optional)</label><input placeholder="Koi note likhein" value="'+esc(F.note)+'" oninput="F.note=this.value">';
+b+='<label>Tareekh</label><input type="date" value="'+esc(F.date)+'" oninput="F.date=this.value"><button class="sv" style="background:'+P[1]+'" onclick="saveForm()">'+P[3]+'</button>'+(t=='sale'?'<div id="tot" class="tot">Total: '+rs(ltot())+'</div>':'')+'<datalist id="il">'+Object.keys(items).map(function(i){return '<option value="'+esc(i)+'">'}).join('')+'</datalist>';
+return hdr(P[0],P[1],P[2],true)+'<div class="sw">'+b+'</div>'}
+function saveForm(){var t=F.type,lt=ltot(),ls=F.lines.filter(function(l){return Number(l.r)>0}),nm=ls.map(function(l){var q=Number(l.q)||1;return (l.n.trim()||'Samaan')+(q>1?' x'+q:'')}).join(', '),e={id:uid(),date:F.date||today(),type:t=='sale'?'cash':t,pid:null,item:'',amt:0},a;
+if(t=='sale'){if(!(lt>0)){alert('Rate likhein.');return}e.amt=lt;e.item=nm;e.lines=ls;e.pid=F.pid}
+else if(t=='udhar'){a=Number(F.amt)||lt;if(!F.pid){alert('Customer chunein.');return}if(!(a>0)){alert('Udhar ki raqam likhein.');return}e.pid=F.pid;e.amt=a;e.item=nm;e.lines=ls;if(F.due)e.due=F.due}
+else if(t=='wasool'){a=Number(F.amt);if(!F.pid){alert('Customer chunein.');return}if(!(a>0)){alert('Raqam likhein.');return}e.pid=F.pid;e.amt=a;e.pay=F.pay;if(F.note)e.note=F.note}
+else{a=Number(F.amt);if(!(a>0)){alert('Raqam likhein.');return}e.amt=a;e.cat=F.cat||'Mazeed';e.item=e.cat;if(F.note)e.note=F.note}
+DB.entries.push(e);save();var p=F.pid;F=null;toast('Mehfooz ho gaya');if((t=='udhar'||t=='wasool')&&p)go('person',p);else go('home')}
+function addC(){if(F)F.pend=false;go('add')}
+function vAdd(){return hdr('Naya Customer','#1565c0','👤',true)+'<div class="sw"><label style="margin-top:0">Naam</label><input id="nn"><label>Pehchan lafz (jaise: darzi)</label><input id="nt"><label>Phone (zaroori nahi)</label><input id="nph" type="tel"><button class="sv" style="background:#1976d2" onclick="saveCust()">Customer Mehfooz Karein</button></div>'}
+function saveCust(){var n=$('nn').value.trim();if(!n){alert('Naam likhein.');return}var p={id:uid(),name:n,tag:$('nt').value.trim(),phone:$('nph').value.trim()};DB.people.push(p);save();toast('Customer mehfooz ho gaya');if(F&&F.pend){F.pend=false;F.pid=p.id;go('form')}else go('person',p.id)}
+function vReport(){var f=rng=='aaj'?fToday:rng=='mahina'?fMonth:fAll,s=stats(f);
+function r(a,b){return '<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #e8edf1"><span>'+a+'</span><b>'+rs(b)+'</b></div>'}
+return hdr('Report','#1f4e79','📊',true)+'<div class="sw"><select onchange="rng=this.value;render()"><option value="aaj"'+(rng=='aaj'?' selected':'')+'>Aaj ('+today()+')</option><option value="mahina"'+(rng=='mahina'?' selected':'')+'>Is mahine</option><option value="kul"'+(rng=='kul'?' selected':'')+'>Kul</option></select><div class="g2" style="margin-top:12px">'+sc('gc','💵','Kul Naqd Farokht',rs(s.c))+sc('bc','👤','Kul Udhar Diya',rs(s.u))+sc('pc','💰','Raqam Wasool',rs(s.w))+sc('oc','👛','Kharcha',rs(s.k))+'</div>'+
+'<div class="bar gc"><span style="font-size:26px">📈</span><span>Andaza Munafa (andaza)<b>'+rs(s.est)+'</b></span></div><div class="bar rc"><span style="font-size:26px">💸</span><span>Total Baqi Udhar<b>'+rs(totalUdhar())+'</b></span></div>'+
+'<button class="bt s" style="background:#3a6b94" onclick="full=!full;render()">'+(full?'Report chhupayein':'Puri Report Dekhein')+'</button>'+
+(full?'<h3>Poora hisab</h3>'+r('Kul farokht',s.s)+r('Naqd farokht',s.c)+r('Udhar farokht',s.u)+r('Raqam wasool',s.w)+r('Naqd aamdani',s.ci)+r('Kharcha / Khareedari',s.k)+r('Bachat (naqd aamdani - kharcha)',s.b)+r('Andaza munafa (sirf andaza)',s.est)+'<h3>Entries</h3>'+(s.l.length?s.l.slice().sort(byDate).slice(0,200).map(function(e){return erow(e,true)}).join(''):'<div class="sm">Koi entry nahi.</div>'):'')+'</div>'}
+function vMore(){var m=[['👤','Customers','Sabhi customers ki list','khata'],['🗂','Backup Data','Data ko safe rakhein','backup'],['⚙','Settings','Dukan ka naam aur munafa','settings'],['ℹ','About','Dukan Khata v1.0','about'],['❓','Help','Madad ke liye','help']];
+return hdr('Mazeed','#2f4b66','&#9776;',true)+'<div class="sw" style="padding-top:6px">'+m.map(function(x){return '<div class="mi" onclick="go(\''+x[3]+'\')"><i>'+x[0]+'</i><div><b>'+x[1]+'</b><span class="sm">'+x[2]+'</span></div><span>&rsaquo;</span></div>'}).join('')+'<div class="ban">'+HL+'<div class="t">Chhoti Dukan Bari Soch</div></div></div>'}
+function vSub(){var lb=DB.shop.lastBackup,b='',t='';
+if(view=='settings'){t='Settings';b='<label style="margin-top:0">Dukan ka naam</label><input id="sn" value="'+esc(DB.shop.name)+'"><label>Munafa fisad (andaza)</label><input id="sm" type="number" min="0" max="100" value="'+esc(DB.shop.margin)+'"><div class="sm" style="margin-top:6px">Yeh sirf andaza hai, asal munafa nahi.</div><button class="sv" style="background:#1e8e3e" onclick="saveShop()">Mehfooz Karein</button>'}
+if(view=='backup'){t='Backup Data';b='<div class="sm">Aakhri backup: '+(lb?esc(new Date(lb).toLocaleString()):'abhi tak nahi')+'</div><button class="sv" style="background:#1976d2;margin-top:12px" onclick="exportDB()">Backup mehfooz karein</button><label>Backup wapas lein</label><input type="file" accept=".json,application/json" onchange="importDB(this)">'}
+if(view=='about'){t='About';b='<b>Dukan Khata v1.0</b><p>Offline hisab kitab. Sara data sirf aap ke phone mein mehfooz hota hai, internet ki zaroorat nahi.</p>'}
+if(view=='help'){t='Help';b='<p><b>Naqd Farokht:</b> customer ne paisay de diye.</p><p><b>Udhar Diya:</b> saman udhar diya.</p><p><b>Raqam Wasool:</b> customer ne udhar ke paisay wapas kiye.</p><p><b>Kharcha:</b> dukan ka kharcha likhein.</p><p><b>Backup:</b> har hafte Mazeed mein Backup Data zaroor lein.</p>'}
+return hdr(t,'#2f4b66','',true)+'<div class="sw">'+b+'</div>'}
+function saveShop(){DB.shop.name=$('sn').value.trim();var m=Number($('sm').value);DB.shop.margin=m>=0&&m<=100?m:10;save();toast('Mehfooz ho gaya');go('more')}
+function delE(id){if(!confirm('Yeh entry mita dein?'))return;DB.entries=DB.entries.filter(function(e){return e.id!=id});save();render()}
+function share(id){var p=person(id),t='*'+(DB.shop.name||'Dukan')+'*\nHisab: '+p.name+'\n\n';mine(id).sort(function(a,b){return a.date<b.date?-1:1}).forEach(function(e){t+=e.date+' '+LB[e.type]+(e.item?' '+e.item:'')+' '+rs(e.amt)+'\n'});t+='\nKul baqi: '+rs(Math.max(bal(id),0));
+if(navigator.share){navigator.share({text:t}).catch(function(){})}else{var ph=(p.phone||'').replace(/\D/g,'');if(ph.charAt(0)=='0')ph='92'+ph.slice(1);window.open('https://wa.me/'+ph+'?text='+encodeURIComponent(t))}}
+function exportDB(){DB.shop.lastBackup=new Date().toISOString();save();var b=new Blob([JSON.stringify(DB)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='dukan-khata-backup-'+today()+'.json';document.body.appendChild(a);a.click();a.remove();render()}
+function importDB(inp){var f=inp.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);if(!d.people||!d.entries)throw 0;if(!confirm('Maujooda data ki jagah backup wapas aayega. Jaari rakhein?'))return;d.shop=d.shop||{name:'',margin:10,lastBackup:null};DB=d;save();toast('Backup wapas aa gaya');go('home')}catch(e){alert('Yeh sahi backup file nahi hai.')}};r.readAsText(f)}
+function render(){var v=view,h=v=='home'?vHome():v=='khata'?vKhata():v=='person'?vPerson():v=='form'?vForm():v=='add'?vAdd():v=='report'?vReport():v=='more'?vMore():vSub();$('app').innerHTML=h;
+var main=['home','khata','report','more'].indexOf(view)>-1,n=$('nav');n.style.display=main?'flex':'none';
+if(main)n.innerHTML=[['home','🏠','Home'],['khata','👥','Udhar Khate'],['report','📊','Report'],['more','☰','Mazeed']].map(function(x){return '<button class="'+(view==x[0]?'on':'')+'" onclick="go(\''+x[0]+'\')"><i>'+x[1]+'</i>'+x[2]+'</button>'}).join('')}
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
+if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().catch(function(){})}
+DB=load();render();
+</script>
+</body>
+</html>
